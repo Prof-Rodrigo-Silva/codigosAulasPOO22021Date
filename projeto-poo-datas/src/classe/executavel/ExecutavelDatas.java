@@ -16,6 +16,7 @@ import java.util.Date;
 public class ExecutavelDatas {
 
 	public static void main(String[] args) throws ParseException, InterruptedException {
+		
 		Date date = new Date();
 		
 		System.out.println(date);
@@ -24,7 +25,7 @@ public class ExecutavelDatas {
 		
 		System.out.println("Dia do mês "+date.getDate());
 		
-		System.out.println("Ano "+ (date.getYear() + 1900));
+		System.out.println("Ano "+ (date.getYear()+1900));
 		
 		//Formatando datas
 		
@@ -54,13 +55,14 @@ public class ExecutavelDatas {
 		
 		Calendar calendar = Calendar.getInstance();
 		
+		
 		System.out.println("Data em milesegundos "+calendar.getTimeInMillis());
 		
 		System.out.println("Dia do mês "+calendar.get(Calendar.DAY_OF_MONTH));
 		
 		System.out.println("Dia da semana "+calendar.get(Calendar.DAY_OF_WEEK));
 		
-		System.out.println("Hora do dia "+(calendar.get(Calendar.HOUR_OF_DAY)-1));
+		System.out.println("Hora do dia "+(calendar.get(Calendar.HOUR_OF_DAY)));
 		
 		System.out.println("Minuto "+calendar.get(Calendar.MINUTE));
 		
@@ -77,7 +79,7 @@ public class ExecutavelDatas {
 		System.out.println("Formatação "+simpleDateFormat.format(calendar.getTime()));
 		
 		
-		System.out.println("--------------------------------------------------");
+		//System.out.println("--------------------------------------------------");
 		
 		simpleDateFormat = new SimpleDateFormat("dd/MM/yyyy");
 		
@@ -99,7 +101,7 @@ public class ExecutavelDatas {
 			System.out.println("Boleto não vencido");
 		}
 		
-		System.out.println("--------------------------------------------------");
+		//System.out.println("--------------------------------------------------");
 		
 		long dias = ChronoUnit.DAYS.between(LocalDate.parse("2021-01-01"), LocalDate.now());
 		
@@ -109,13 +111,13 @@ public class ExecutavelDatas {
 		 
 		System.out.println("Passaram "+meses+" meses...");
 		
-		System.out.println("--------------------------------------------------");
+		//System.out.println("--------------------------------------------------");
 		
 		Calendar calendar1 = Calendar.getInstance();
 		
 		calendar1.setTime(new SimpleDateFormat("dd-MM-yyyy").parse("19-11-2021"));
 		
-		calendar1.add(Calendar.DAY_OF_MONTH, -11);
+		calendar1.add(Calendar.DAY_OF_MONTH, +5);
 		
 		System.out.println(new SimpleDateFormat("dd-MM-yyyy").format(calendar1.getTime()));
 		
@@ -134,7 +136,7 @@ public class ExecutavelDatas {
 					+new SimpleDateFormat("dd/MM/yyyy").format(calendar2.getTime()));
 			
 		}
-		System.out.println("--------------------------------------------------");
+		//System.out.println("--------------------------------------------------");
 		//API de data JAVA 8
 		
 		LocalDate dataHoje = LocalDate.now();
